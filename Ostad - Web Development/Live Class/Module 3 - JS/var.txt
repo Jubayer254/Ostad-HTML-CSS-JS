@@ -1,5 +1,0 @@
-Not Allowed
-
-1abc -> no number at begining
-abc xyz -> no space in between
-@abc -> no spacial character except underscrore and $ (_ and $)
