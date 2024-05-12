@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Practice</title>
+    <style>
+        .heading-class1{
+            border: 2px solid red; /* CLASS SELECTOR */
+        }
+        .heading-class2{
+            border: 2px solid rgb(89, 47, 89); /* CLASS SELECTOR */
+        }
+        *{
+            color: blue; /* UNIVERSAL SELECTOR */
+        }
+        ul li{
+            border: 2px solid black; /* DESCENDANT SELECTOR */
+        }
+        #h1-id{
+            background-color: cadetblue; /* ID SELECTOR */
+        }
+        #p-id{
+            border: 5px solid aquamarine; /* ID SELECTOR */
+        }
+        h1, p {
+            margin: 50px; /* GROUP SELECTOR */
+        }
+        .unit-mm{
+            font-size: 5mm;
+        }
+        .unit-cm{
+            font-size: 1cm;
+        }
+        .unit-inch{
+            font-size: 0.5in;
+        }
+        .unit-q{
+            font-size: 40q;
+        }
+        .unit-px{
+            font-size: 50px;
+        }
+        .hsl-color{
+            color: hsl(hue, saturation, lightness);
+        }
+        .border-class{
+            border-style: solid;
+            border-top-width: thick;
+            border-left-color: red;
+            border-radius: 20px;
+            margin-top: 50px; /* (4) -> Top, Right, Bottom, Left | (2) -> (Top+Bottom),(Left+Right) */
+            padding: 20px;
+        }
+        li{
+            /* display: inline; */
+            /* display: block; */
+            /* display: none; */
+            display: inline-block; /* ELEMENT SELECTOR */
+        }
+        .box1{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background-color: #f0baba;
+            z-index: 2; /* OVERLAP PRIORITY */
+            text-align: center;
+            padding: 3px;
+            left: 10px;
+            top: 10px;
+        }
+        .box2{
+            position: absolute;
+            height: 120px;
+            width: 200px;
+            background-color: #eae98f;
+            z-index: 3;
+            text-align: center;
+            padding: 5px;
+            margin: 20px;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading-class1" id="h1-id">This is a heading 1</h1>
+    <h1 class="heading-class2">This is a heading 2</h1>
+    <p id="p-id">This is a paragraph</p>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+    <li>Outside</li>
+    <p class="hsl-color">This is hsl example</p>
+    <h2 class="unit-mm">Font size 5 mm</h2>
+    <h2 class="unit-cm">Font size 1 cm</h2>
+    <h2 class="unit-inch">Font size 0.5inch</h2>
+    <h2 class="unit-q">Font size 40q</h2>
+    <h2 class="unit-px">Font size 5px</h2>
+
+    <p class="border-class">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet maiores nemo ea voluptate incidunt harum itaque temporibus, molestiae eos sed eius quaerat voluptatum quibusdam quas, illum deserunt? Ab, iusto magni.
+    A rem, accusantium quae fuga voluptatem quibusdam ad aspernatur adipisci amet minima laboriosam hic voluptatibus consequuntur, reiciendis repudiandae inventore officiis. Eum perferendis consequuntur nostrum temporibus ipsum quidem explicabo sapiente nihil!
+    Architecto fuga ratione eaque magnam a quo laborum animi non quas error neque accusantium, eius ad incidunt consequatur temporibus veniam vero perferendis. Optio rem asperiores commodi laborum sed maxime quis?
+    </p>
+
+    <li>item 1</li>
+    <li>item 1</li>
+    <li>item 1</li>
+    <li>item 1</li>
+    <li>item 1</li>
+
+    <div class="box1">
+        
+    </div>
+    <div class="box2">
+        
+    </div>
+
+
+</body>
+</html>

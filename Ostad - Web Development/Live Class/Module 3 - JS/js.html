@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Example</title>
+</head>
+<body>
+    
+    <script language="javascript" type="text/javascript">
+        var a = 10;
+        var b = "Hello Ten";
+
+
+        document.write(a);
+        document.write("<br>");
+        document.write("Hello World");
+
+        // alert("This is an alert");
+        console.log("Hello From Console");
+
+        var u, x, y, z;
+        x = "string"
+        y = 50
+        z=100.5;
+        n = null;
+        p = true;
+        q = false;
+
+        console.log(typeof(u), typeof(x), typeof(y), typeof(z), typeof(z) ,typeof(p), typeof(q))
+
+        document.write("<br>", "Hello World");
+        document.write("<br>", x, "<br>", y, "<br>", u, "<br>", n);
+        
+        var msg = "Hello I am Var"
+        function ExampleVar(){
+            console.log(msg);
+            console.log(ex);
+            var ex = 10;
+            console.log(ex);
+        }
+        ExampleVar();
+        // console.log(ex);
+
+        let exl;
+        var msg = "Hello I am Let"
+        function ExampleLet(){
+            console.log(msg);
+            console.log(exl);
+            exl = 10;
+            console.log(exl);
+        }
+        ExampleLet();
+        console.log(exl);
+
+
+        var msg = "Hello I am Const"
+        const pi = 3.1416;
+        function ExampleConst(){
+            console.log(msg);
+            console.log(pi);
+            // pi = 10;
+            console.log(pi);
+        }
+        ExampleConst();
+
+        // SCOPE
+        var var1 = 400.43
+        function varlet(){
+            var var1 = "abc";
+            console.log(var1)
+        }
+        function varlet2(){
+            var var1 = 5000;
+            console.log(var1)
+        }
+        varlet();
+        varlet2()
+        console.log(var1)
+
+
+
+
+    </script>
+</body>
+
+
+</html>

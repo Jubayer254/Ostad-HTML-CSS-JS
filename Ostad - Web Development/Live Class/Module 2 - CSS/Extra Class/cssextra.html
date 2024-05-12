@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Grid</title>
+    <style>
+        .container{
+            display: grid;
+            grid-gap: 10px;
+            /* grid-template-columns: repeat(3, 1fr); */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 100px 200px;
+        }
+        .item{
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+        .flex-container{
+            margin-top: 10px;
+            display: flex;
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; */
+            /* justify-content: center; */
+            /* justify-content: flex-end; */
+            /* justify-content: flex-start; */
+            flex-wrap: wrap;
+            
+        }
+        .flex-item{
+            background-color: aquamarine;
+            padding: 20px;
+            text-align: center;
+            flex: 1 0 200px;
+            margin: 2px;
+        }
+        ul{
+            list-style-type: none;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        li{
+            float: right;
+        }
+
+        li a{
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Float Navigation Bar Example</h1> -->
+    <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+    <h1>
+        Grid Example
+    </h1>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <h1>
+        Flex Example
+    </h1>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+    </div>
+
+    
+    
+</body>
+</html>

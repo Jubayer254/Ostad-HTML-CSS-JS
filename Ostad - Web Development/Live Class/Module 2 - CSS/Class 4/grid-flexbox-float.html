@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            margin-bottom: 50px;
+        }
+        .grid-item{
+            background-color: #aaa;
+            padding: 20px;
+            text-align: center;
+        }
+        .flex-container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 50px;
+            
+        }
+        .flex-item{
+            background-color: #ddd;
+            padding: 20px;
+            text-align: center;
+            height: 50px;
+            width: 50px;
+        }
+        .left{
+            float: left;
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+        }
+        .right{
+            float: right;
+            background-color: cyan;
+            height: 100px;
+            width: 100px;
+        }
+        .inherit{
+            float: inherit;
+            background-color: red;
+            height: 100px;
+            width: 100px;
+        }
+        .p-font{
+            font-weight: 700;
+            font-style: italic;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+    </div>
+
+    <div class="left">1</div>
+    <div class="right">2
+        <div class="inherit">3</div>
+    </div>
+    <p class="p-font">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi et unde ducimus eos itaque exercitationem. Inventore aperiam qui fugiat aut recusandae nisi suscipit veniam nam libero voluptate tenetur, excepturi ab architecto maiores rerum maxime blanditiis. Quo illum distinctio dolore labore? Eveniet, voluptas quisquam. In vel molestiae ipsam magni perspiciatis laborum eaque voluptatem corrupti dolorum incidunt quod fugiat impedit porro eveniet asperiores aut, tempora iste voluptates dolorem. Perspiciatis accusantium sit eum labore quas ipsam ipsum aliquid reiciendis pariatur illum! Enim, animi quo? Est provident possimus rerum voluptatibus, eum laboriosam at dolorum iste vero accusantium. Molestiae veniam provident quidem! Alias, a fugit.</p>
+</body>
+</html>
