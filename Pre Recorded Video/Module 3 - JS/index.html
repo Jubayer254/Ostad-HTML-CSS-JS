@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+        document.write("Hello JavaScript")
+
+        // VARIABLE 
+        // JS Variable is Case Sensitive
+
+        //PRIMTIVE DATATYPE
+        document.write("<br><br><b>Primtve Datatype</b>")
+        var x = 1; 
+        var y = 3;
+        var z  = x + y;
+        document.write(`<br>Result: ${z}`)
+
+        //NON-PRIMTIVE DATATYPE (Obj, Array, Regular Expression)
+        document.write("<br><br><b>Non Primtve Datatype</b>")
+        //Object
+        var A = {
+            Name: "Jubayer",
+            Age: 24,
+            City: "Dhaka"
+        }
+        document.write(`<br>Name: ${A.Name}`)
+        document.write(`<br>Age: ${A.Age}`)
+        document.write(`<br>City: ${A.City}`)
+
+        //Array
+        document.write("<br><br><b>Array</b>")
+        var arr = ['Dhaka', 'Rangpur', 'Rajshahi']
+        document.write(`<br>City: ${arr}`)
+
+        //Oparators
+        // Arithmetic Operators
+        // Assignment Operators
+        // Comparison / Relational Operators
+        // Logical Operators
+        // Bitwise Operators
+
+        //if else 
+        document.write("<br><br><b>If Else</b>")
+        document.write(`<br>`)
+        var marks = 14;
+        if (marks>=80 && marks<=100){
+            document.write(`Result: A+`)
+        }
+        else if (marks>=80 && marks<=100){
+            document.write(`Result: A`)
+        }
+        else if (marks<70 && marks>=60){
+            document.write(`Result: A-`)
+        }
+        else if (marks<60 && marks>=50){
+            document.write(`Result: B`)
+        }
+        else if (marks<50 && marks>=40){
+            document.write(`Result: C`)
+        }
+        else if (marks<40 && marks>=33){
+            document.write(`Result: D`)
+        }
+        else {
+            document.write(`Result: F`)
+        }
+
+        //Switch
+        document.write("<br><br><b>Switch Case</b><br>")
+        switch(true){
+            case (marks>=80 && marks<=100):
+                document.write(`Result: A+`);
+                break;
+            
+            case (marks>=80 && marks<=100):
+                document.write(`Result: A`);
+                break;
+            
+            case (marks<70 && marks>=60):
+                document.write(`Result: A-`);
+                break;
+            
+            case (marks<60 && marks>=50):
+                document.write(`Result: B`);
+                break;
+            
+            case (marks<50 && marks>=40):
+                document.write(`Result: C`);
+                break;
+            
+            case (marks<40 && marks>=33):
+                document.write(`Result: D`);
+                break;
+            
+            default: 
+                document.write(`Result: F`);
+        }
+        
+        //LOOP
+        document.write("<br><br><b>For Loop</b><br><br>")
+
+        //for loop - Enrty Control Loop
+        var i;
+        for(i=0; i<10; i++){
+            if(i === 5 || i === 8){
+                continue;
+            }
+            document.write(i+" <button>For Submit</button><br>");
+        }
+
+        //while loop - Enrty Control Loop
+        document.write("<br><br><b>While Loop</b><br><br>")
+        var j=0;
+        while(j<10){
+            if(j === 5 || j === 8){
+                j++;
+                continue;
+            }
+            document.write(j+" <button>While Submit</button><br>");
+            j++;
+        }
+
+        //do while loop - Exit Control Loop
+        document.write("<br><br><b>Do While Loop</b><br><br>")
+        var k=0;
+        do{
+            if(k === 5 || k === 8){
+                k++;
+                continue;
+            }
+            document.write(k+" <button>Do Submit</button><br>");
+            k++;
+        }while(k<10)
+
+    </script>
+</body>
+</html>
