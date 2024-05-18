@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <input onchange="myFunction('Changed')" type="text">
+    <input onkeyup="myFunction('key Upped')" type="text">
+    <input onkeydown="myFunction('key Downed')" type="text">
+    <button onclick="myFunction('Clicked....')">Click</button>
+    <button onmouseover="myFunction('Overed....')">Over</button>
+    <button onmouseout="myFunction('Out....')">Out</button>
+</head>
+<body onload="myFunction('Loaded....')" >
+    <script>
+        function myFunction(msg){
+            console.log(msg)
+        }
+    </script>
+</body>
+</html>

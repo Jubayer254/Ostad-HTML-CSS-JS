@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="objAlert()">objAlert</button>
+    <button onclick="objConfirm()">objConfirm</button>
+    <button onclick="objPrompt()">objPrompt</button>
+    <button onclick="objOpen()">objOpen</button>
+    <button onclick="objClose()">objClose</button>
+    <script>
+        function objAlert(){
+            setTimeout(()=>{
+                alert("This is an alert after 5 sec");
+            }, 5000 //ms
+        );
+            
+            
+        }
+        function objConfirm(){
+            let result = confirm("Are you Sure?");
+            document.write(result)
+        }
+        function objPrompt(){
+            let result = prompt("What is your name?");
+            document.write(result)
+        }
+        function objOpen(){
+            open();
+        }
+        function objClose(){
+            close();
+
+        }       
+    </script>
+</body>
+</html>

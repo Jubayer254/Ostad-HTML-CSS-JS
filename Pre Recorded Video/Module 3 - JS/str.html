@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var country = "Bangladesh";
+        at = country.charAt(5);
+        document.write(at+ "<br>");
+
+        var country2 = "England"
+        newCountry = country.concat(country2);
+        document.write(newCountry+ "<br>");
+
+        at = country.indexOf("l");
+        document.write(at+ "<br>");
+
+        at = country.lastIndexOf("a");
+        document.write(at+ "<br>");
+
+        newCountry = country.replace("desh", "-deshi");
+        document.write(newCountry+ "<br>");
+
+        lang = country.substr(0, 6);
+        document.write(lang+ "<br>");
+
+        lang = country.substring(0, 6);
+        document.write(lang+ "<br>");
+
+        lang = country.substring(0, 6).toLocaleLowerCase();
+        document.write(lang+ "<br>");
+
+        lang = country.substring(0, 6).toLocaleUpperCase();
+        document.write(lang+ "<br>");
+
+        str = "   Hello     Sir      ";
+        document.write(str.trim()+ "<br>");
+
+
+    </script>
+</body>
+</html>

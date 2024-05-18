@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Javascript Objects</title>
+</head>
+<body>
+    <div id="output"></div>
+</body>
+<script>
+// OBJECTS
+let gender = "Male";
+const person = {name: "Anis", age: 55, height: 5.6, personGender: gender}
+document.write("The given object is: "+ JSON.stringify(person) + "<br>");
+
+const myBook = {
+    title: "Perl",
+    author: "jubayer",
+    page: 555
+}
+document.write("Book title is: "+myBook.title+"<br>")
+document.write("Book author is: "+myBook.author+"<br>")
+document.write("Book page count is: "+myBook.page+"<br><br>")
+
+document.write("Book title is: "+myBook['title']+"<br>")
+document.write("Book author is: "+myBook['author']+"<br>")
+document.write("Book page count is: "+myBook['page']+"<br><br>")
+
+const myBook2 = new Object;
+myBook2.title = "One Love"
+myBook2.author = "Humayun"
+myBook2.page = 644
+document.write("Book title is: "+myBook2.title+"<br>")
+document.write("Book author is: "+myBook2.author+"<br>")
+document.write("Book page count is: "+myBook2.page+"<br><br>")
+
+// ARRAY
+const colors = ["Brown", "Red", "Pink", "Yellow", 6, 7.2]
+document.write("The given array is:" +colors+ "<br>")
+document.write("The given array is (index - 1): " +colors[1]+ "<br>")
+document.write("The given array is (index - 4): " +colors[4]+ "<br>")
+document.write("The given array is (index - 5): " +colors[5]+ "<br><br>")
+
+//DATE
+let date = new Date()
+document.write("Current Date and time is: " +date+ "<br><br>")
+console.log(typeof(date))
+
+let age = 20
+if(age => 18){
+    document.write("You are eligible for marriage :)<br><br>")
+}
+
+// LOOP
+let output = document.getElementById("output");
+output.innerHTML += "<p>Loop Started</p>";
+var count = 0;
+
+while(count<10){
+    output.innerHTML += "Current Count: "+ count + "<br>";
+    count++;
+}
+output.innerHTML += "<p>Loop Stopped</p>";
+
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function addTwoNumber(a, b){
+        return a+b;
+    }
+    result = addTwoNumber(5, 7);
+    document.write(result+ "<br>");
+    result = addTwoNumber(51, 437);
+    document.write(result+ "<br>");
+
+    // FOR LOOP IN ARRAY
+    var Arr = ['Jubayer', 'Ahsan', 'Mudabbir', 'Asif']
+    for(var i = 0; i<Arr.length; i++){
+        document.write(Array[i]+ "<br>");
+    }
+
+    // FOR IN LOOP IN ARRAY
+    for(var item in Arr){
+        document.write(Arr[item]+ "<br>");
+    }
+
+    // FOR IN LOOP IN OBJECT 
+    var person={
+        name: "Jack",
+        age: 39,
+        city: "London",
+        height: "5.5 feet"
+    }
+    for(var item in person){
+        document.write(person[item]+ "<br>");
+    }
+
+    // ARRAY CONCAT
+    document.write("<br>");
+    var arr1 = [1,2,3];
+    var arr2 = [4,5,6];
+    
+    var newArray = arr1.concat(arr2);
+    document.write(newArray+ "<br><br>");
+
+    // ARRAY FORM
+    var Title = "Learn with Jubayer"
+    var TitleArray = Array.from(Title);
+    document.write(TitleArray+ "<br><br>");
+
+    // ARRAY FILTER
+    var num = [30,32,40,55,60,80,90]
+    result = num.filter(function(item){
+        return item>50
+    });
+    document.write(result+ "<br>");
+
+    // ARRAY FIND
+    result = num.find(function(item){
+        return item>50
+    });
+    document.write(result+ "<br>");
+
+    // ARRAY FIND
+    result = num.findIndex((item)=>{
+        return item>50
+    });
+    document.write(result+ "<br>");
+
+    //ARRAY ForEach
+    num.forEach((fetch)=>{
+        document.write(fetch+ "<br>");
+    });
+
+    arrResult = num.includes(55);
+    arrResult2 = num.indexOf(55); // - 1 if do not exixsts 
+    document.write(arrResult+ "<br>");
+    document.write(arrResult2+ "<br>");
+
+    // POP, PUSH, REVERSE
+    var revNum = num.reverse()
+    document.write(revNum+ "<br>");
+    num.push(99, 110)
+    document.write(revNum+ "<br>");
+    num.pop() //removes the last element
+    document.write(num+ "<br>");
+
+    // POP, PUSH, REVERSE
+    num.sort();
+    document.write(num+ "<br>");
+    num.reverse();
+    document.write(num+ "<br>");
+
+    // SLICE
+    var newArr = num.slice(1,3);
+    document.write(newArr+ "<br>");
+
+    // SPLICE
+    num = [1,2,3,4,5,6,7,8,9]
+    num.splice(1,1); //Parameters: index, removeCount, item
+    document.write(num+ "<br>");
+    num.splice(1,0,50); //Parameters: index, removeCount, item
+    document.write(num+ "<br>");
+
+
+</script>
+</html>
