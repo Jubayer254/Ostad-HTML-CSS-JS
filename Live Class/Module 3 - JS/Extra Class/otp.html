@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <link rel="stylesheet" href="css/otp.css">
+    <link rel="stylesheet" href="css/switch.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/btn.css">
+</head>
+<body>
+    <div class="otp-section">
+        <div class="otp-container">
+            <h2>OTP Verification</h2>
+            <div class="otp-input-list">
+                <input type="text" id = "in1" class="otp-input" maxlength="1" onkeyup="moveFocus(event)">
+                <input type="text" id = "in2" class="otp-input" maxlength="1" onkeyup="moveFocus(event)">
+                <input type="text" id = "in3" class="otp-input" maxlength="1" onkeyup="moveFocus(event)">
+                <input type="text" id = "in4" class="otp-input" maxlength="1" onkeyup="moveFocus(event)">
+            </div>
+            <button id="btn" class="button2">Submit</button>
+            
+        </div>
+        <label for="theme" class="theme">
+            <span class="theme__toggle-wrap">
+                <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
+                <span class="theme__fill"></span>
+                <span class="theme__icon">
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                </span>
+            </span>
+        </label>
+
+    </div>
+<script src="js/otp.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
