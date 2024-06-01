@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ------------------------------------VARIABLES------------------------------------ */
+
+:root{
+    --theme-bg: #FE6347;
+    --theme-bg-light: #ff846e;
+    --theme-font-color:#FFFFFF;
+    --theme-font-color-secondary:#e8e5e5;
+    --theme-footer-color:#F1F1F1;
+    --theme-p-color:#7d7b7b;
+    --theme-p-color-light:#bfbcbc;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-alert: #ffffff;
+}
+
+/* ------------------------------------BODY------------------------------------ */
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--theme-font-color);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-container-main {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ------------------------------------SIDEBAR------------------------------------ */
+
+.day-nightmode-switch{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.project-sidebar{
+    width: 20%;
+    height: 100vh;
+    background-color: var(--theme-bg);
+    color: var(--theme-font-color);
+    padding: 50px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.project-sidebar h3{
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.project-sidebar li, a{
+    font-size: 15px;
+    padding: 5px 0 5px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--theme-font-color);
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-sidebar li {
+    transition: padding-left 0.3s ease; 
+}
+
+.project-sidebar li:hover{
+    background-color: var(--theme-bg-light);
+    padding-left: 10px;
+}
+
+/* ------------------------------------FOOTER------------------------------------ */
+
+.project-footer{
+    box-sizing: border-box;
+    height: 70px;
+    width:100%;
+    background-color: var(--theme-footer-color);
+}
+
+/* ------------------------------------SHOWCASE------------------------------------ */
+
+.project-body{
+    width: 80%;
+    padding: 60px 4% 0 4%;
+    font-size: 25px;
+}
+
+.project-body h1{
+    margin: 0;
+    font-size: 50px;
+    color: var(--color-black);
+}
+
+.project-body h2{
+    color: var(--theme-bg);
+    margin: 60px 0 20px 0;
+}
+
+.project-section-hr{
+    background-color: var(--theme-bg);
+    height: 8px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.project-body-showcase-images {
+    margin-top: 35px;
+    gap: 10px; 
+}
+
+.project-body-showcase-images img{
+    transition: filter 0.3s ease; 
+}
+
+.project-body-showcase-images img:hover {
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+/* ------------------------------------SERVICES------------------------------------ */
+
+.project-body-sevices,
+.project-body-designers {
+    margin-top: 35px;
+}
+
+.project-body-showcase-images img {
+    width: 49%;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .project-body-designers-persons{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .project-body-showcase-images img {
+        width: 98%;
+    }
+    .project-body-packages-all-infos{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .project-sidebar h3{
+        font-size: 15px !important;
+    }
+    .project-sidebar{
+        padding: 20px !important;
+    }
+    .project-sidebar li, a{
+        font-size: 12px !important;
+    }
+}
+
+.project-body-services p,
+.designers-desc,
+.packages-desc,
+.contact-desc{
+    color: var(--theme-p-color);
+    font-size: 15px;
+}
+
+.project-body-designers-persons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 50px;
+    gap: 10px;
+}
+
+/* ------------------------------------DESIGNERS------------------------------------ */
+
+
+.designers-person {
+    display: flex;
+    flex-direction: column;
+}
+
+.designers-person img{
+    width: 100%;
+    filter: grayscale(80%);
+}
+
+.designers-person img{
+    transition: filter 0.3s ease; 
+}
+
+.designers-person img:hover {
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+.designers-person-info{
+    background-color: var(--theme-font-color-secondary);
+    margin: 0;
+    padding: 20px;
+}
+
+.designers-person-name{
+    margin: 0;
+    font-size: 20px;
+    color: var(--color-black);
+}
+
+.designers-person-designation{
+    font-size: 17px;
+    color: var(--theme-p-color);
+
+}
+
+.designers-person-paragraph{
+    font-size: 15px;
+    color: var(--color-black);
+}
+
+.project-body-packages-info{
+    margin-top: 10px;
+    
+}
+
+/* ------------------------------------PACKAGES------------------------------------ */
+
+.project-body-packages-info-head{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: var(--theme-font-color);
+    font-size: 20px;
+}
+
+.project-body-packages-info-head-1-color{
+    background-color: var(--theme-p-color); 
+    color: var(--theme-font-color-secondary);
+}
+
+.project-body-packages-info-head-2-color{
+    background-color: var(--theme-bg); 
+    color: var(--theme-font-color-secondary);
+}
+
+.project-body-packages-info-body{
+    background-color: var(--theme-font-color-secondary); 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: var(--color-black);
+    font-size: 18px;
+}
+
+.project-body-packages-info-body{
+    border-bottom: 0.1px solid var(--theme-p-color-light);
+}
+
+.basic-sign-up-btn{
+    margin: 20px;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    width: 100px;
+    height: 50px;
+}
+
+.basic-sign-up-btn-1-color:hover{
+    background-color: var(--theme-p-color);
+    color: var(--theme-font-color);
+    cursor: pointer;
+}
+
+.basic-sign-up-btn-1-color{
+    background-color: var(--color-white);
+}
+
+.basic-sign-up-btn-2-color:hover{
+    background-color: var(--theme-bg-light);
+    cursor: pointer;
+}
+
+.basic-sign-up-btn-2-color{
+    background-color: var(--theme-bg);
+    color: var(--theme-font-color);
+}
+
+.packages-price {
+    display: flex; 
+    align-items: center; 
+    margin-top: 20px;
+    text-align: center;
+}
+
+.packages-price button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 40px;
+    color: var(--color-black);
+}
+
+.packages-price p{
+    font-size: 40px;
+    margin: 0px 10px 0 10px;
+}
+
+.packages-price input{
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    width: 120px;
+    color: var(--color-black);
+    text-align: center;
+}
+
+.packages-price button:hover{
+    color: var(--theme-p-color);
+}
+
+.project-body-packages-all-infos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.checkout-text{
+    font-size: 12px;
+}
+
+.contact-input-label{
+    font-size: 15px;
+    color: var(--theme-p-color);
+}
+
+/* ------------------------------------CONTACT------------------------------------ */
+
+.contact-input{
+    width: 100%;
+    height: 40px;
+    border: 0.5px solid var(--theme-p-color-light);
+    font-size: 15px;
+}
+
+.contact-submit-btn{
+    margin: 20px 0 80px 0;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: var(--theme-bg);
+    color: var(--theme-font-color);
+    cursor: pointer;
+}
+
+.contact-submit-btn:hover{
+    background-color: var(--theme-bg-light);
+}
+
+.required-symbol{
+    font-size: 15px;
+    color: var(--theme-bg);
+}
+
+.swal2-confirm.warning-button {
+    background-color: #7a0202 !important; 
+    color: #FFF !important; 
+}
+
+.swal2-confirm.success-button {
+    background-color: #107007 !important; 
+    color: #FFF !important; 
+}
+
+.swal2-popup {
+    background-color: var(--color-alert)!important; 
+}
+
+.swal2-title {
+    color: var(--color-black) !important;
+}
+
+#swal2-html-container {
+    color: var(--theme-p-color) !important; 
+}
