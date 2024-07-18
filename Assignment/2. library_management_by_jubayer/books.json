@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "title": "Himu",
+        "authors": [
+            "Humayun Ahmed"
+        ],
+        "ISBN": "ABCD-1234",
+        "publishing_year": 2012,
+        "price": 180.0,
+        "quantity": 5
+    }
+]
