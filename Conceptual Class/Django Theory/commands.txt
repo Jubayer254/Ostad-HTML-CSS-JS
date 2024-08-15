@@ -1,0 +1,6 @@
+pip3 install pipenv
+python3 -m pipenv shell
+pipenv install django
+django-admin startproject cool_project
+or
+django-admin startproject cool_project . --[to create project in the current directiory...]
