@@ -1,3 +1,5 @@
+--CREATE DJANGO PROJECT WITH VIRTUAL ENVIRONMENT
+
 pip3 install pipenv
 python3 -m pipenv shell
 pipenv install django

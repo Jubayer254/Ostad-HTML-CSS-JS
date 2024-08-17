@@ -1,0 +1,23 @@
+--VIRTUAL ENVIRONMENT
+
+pip3 install pipenv
+pipenv shell
+which python
+
+--DJANGO
+
+pipenv install django
+
+django-admin startproject my_project
+or
+django-admin startproject my_project . --[to create project in the current directiory...] 
+
+python manage.py runserver 8000
+
+python manage.py migrate
+
+python3 manage.py createsuperuser
+
+python3 manage.py startapp myapp
+
+>Python: Select Interpreter (VSCode)
