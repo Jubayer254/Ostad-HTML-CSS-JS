@@ -6,3 +6,4 @@ pipenv install django
 django-admin startproject cool_project
 or
 django-admin startproject cool_project . --[to create project in the current directiory...]
+python manage.py startapp cool_app
