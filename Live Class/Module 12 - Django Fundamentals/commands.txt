@@ -21,3 +21,10 @@ python3 manage.py createsuperuser
 python3 manage.py startapp myapp
 
 >Python: Select Interpreter (VSCode)
+
+python manage.py makemigrations "app_name"
+
+python manage.py migrate "app_name"
+
+python manage.py loaddata "app_name"/"json_file"
+Example: python manage.py loaddata todo_app/tasks_test
