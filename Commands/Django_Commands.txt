@@ -1,0 +1,58 @@
+
+VIRTUAL ENVIRONMENT SETUP
+
+1. Install Pipenv:
+   pip3 install pipenv
+
+2. Activate the Virtual Environment:
+   pipenv shell
+
+3. Select Python Interpreter (VSCode):
+   - Open the Command Palette (Ctrl + Shift + P).
+   - Type and select Python: Select Interpreter.
+
+4. Check Python Path:
+   which python
+
+
+DJANGO SETUP
+
+1. Install Django:
+   pipenv install django
+
+2. Create a New Django Project:
+   - To create a project in a new directory:
+     django-admin startproject my_project
+   - To create a project in the current directory:
+     django-admin startproject my_project .
+
+3. Run the Django Development Server:
+   python manage.py runserver 8000
+
+4. Apply Migrations:
+   python manage.py migrate
+
+5. Create a New Django App:
+   python manage.py startapp myapp
+
+6. Make Migrations for an App:
+   python manage.py makemigrations <app_name>
+
+7. Apply Migrations for an App:
+   python manage.py migrate <app_name>
+
+8. Create a Superuser:
+   python manage.py createsuperuser
+
+9. Load Initial Data from a JSON File:
+   python manage.py loaddata <app_name>/<json_file>
+   Example:
+   python manage.py loaddata todo_app/tasks_test.json
+
+10. Enter the Django Shell:
+    python manage.py shell
+    - To exit the shell:
+      exit()
+
+11. Roll Back Migrations for a Specific App:
+    python manage.py migrate <app_name> zero
