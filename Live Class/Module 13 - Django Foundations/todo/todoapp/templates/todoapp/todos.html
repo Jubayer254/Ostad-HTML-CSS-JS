@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Todos</h1>
+    <!-- <p>Name: {{name}}</p>
+    <p>Age: {{age}}</p> -->
+    
+    <!-- <form method="get">
+        <input type="text" name="query" placeholder="Search">
+        <button type="submit">Search</button>
+    </form> -->
+
+    <form method="post">
+        {% csrf_token %}
+        {{search_form}}
+        <button type="submit">Search</button>
+    </form>
+    
+    
+    <ul>
+        {% for todos in todos_test_data %}
+            <li>{{todos.title}} - {{todos.completed}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
