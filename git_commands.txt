@@ -1,0 +1,23 @@
+Create a new branch locally:
+git checkout -b new-branch-name
+
+Make your changes and commit them:
+git add .
+git commit -m "Your commit message"
+
+Push the new branch to GitHub:
+git push -u origin new-branch-name
+
+Switch Branch:
+git branch
+git checkout branch-name
+
+To merge the dev branch into the main branch, follow these steps:
+Ensure you are on the main branch:
+git checkout main
+Pull the latest changes from the remote repository (optional but recommended):
+git pull origin main
+Merge the dev branch into the main branch:
+git merge dev
+Push the updated main branch to the remote repository:
+git push origin main
