@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Task
+from django.http import HttpResponse
+from .forms import TaskForm
 
 # Create your views here.
 def task_list(request):
@@ -14,3 +16,39 @@ def task_list(request):
 def task_details(request, pk):
     task = Task.objects.get(pk=pk)
     return render(request, 'task_details.html', {"task": task})
+
+def add_task(request):
+    _title = 'test'
+    _description = 'test'
+    _completed = True
+    _due_date = "2024-08-28"
+    task = Task(title=_title, description=_description, completed=_completed, due_date = _due_date)
+    task.save()
+    return redirect(task_list)
+
+def delete_task(request, pk):
+    try:
+        task = Task.objects.get(pk=pk)
+        task.delete()
+    except Task.DoesNotExist:
+        return HttpResponse('Task does not exist')
+    return redirect(task_list)
+
+def update_task(request, pk):
+    try:
+        task = Task.objects.get(pk=pk)
+        task.title = 'Updated'
+        task.save()
+    except Task.DoesNotExist:
+        return HttpResponse('Task does not exist')
+    return redirect(task_list)
+
+def add_task_form(request):
+    if request.method == 'POST':
+        form = TaskForm(request.POST)
+        if(form.is_valid()):
+            form.save()
+            return redirect(task_list)
+    else:
+        form = TaskForm()
+        return render(request, 'add_task.html', {"form": form})
