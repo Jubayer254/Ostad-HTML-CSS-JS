@@ -5,6 +5,12 @@
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
+
+        <!-- {% for field in form %}
+        <div>
+            {{ field.label }} {{ field }}
+        </div>
+        {% endfor %} -->
         <!-- {{form.as_div}} -->
         <!-- {{form.as_ul}} -->
         <button type="submit">Submit</button>
