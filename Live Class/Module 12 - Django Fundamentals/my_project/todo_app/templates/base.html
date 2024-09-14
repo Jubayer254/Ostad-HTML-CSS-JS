@@ -7,6 +7,8 @@
     <title>Task List</title>
 </head>
 <body>
+    <h6>Username: {{request.user}}</h6>
+    <a href="{% url 'logout' %}">Logout</a>
     {% block content %}
     {% endblock %}
 </body>

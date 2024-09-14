@@ -6,4 +6,5 @@ urlpatterns = [
     path('app/', include("myapp.urls")),
     path('orders/', include("orderapp.urls")),
     path('tasks/', include("todo_app.urls")),
+    path('Auth/', include("Auth.urls")),
 ]
