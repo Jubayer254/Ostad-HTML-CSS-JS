@@ -1,0 +1,2 @@
+FIND: \./([a-zA-Z0-9_\-./]+)\.([a-zA-Z]+)
+REPLACE: {% static '$1.$2' %}

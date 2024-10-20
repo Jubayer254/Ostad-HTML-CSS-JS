@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import FileResponse # if need to send any file to client
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Task, Author, Book
@@ -54,12 +55,18 @@ def task_detail(request, pk):
 # CLASS BASED
 
 class TaskList(APIView):
+    # http://127.0.0.1:8000/api/task_list/?q=asd
     def get(self, request):
+        # queryset
+        print(request.GET.get('q'))
         tasks = Task.objects.all()
         serializer = TaskSerializer(tasks, many=True)
         return Response(serializer.data)
 
     def post(self, request):
+        # JSON, FORM
+        print(request.data)
+        # print(request.body)
         serializer = TaskSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
