@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from .forms import AuthorForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def add_author(request):
     if request.method == "POST":
         form = AuthorForm(request.POST)

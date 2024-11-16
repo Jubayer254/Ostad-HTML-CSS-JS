@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Eventify{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="{% url 'home' %}" class="text-2xl font-bold text-gray-700">Eventify</a>
+            
+            <button id="menu-toggle" class="block md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <div id="nav-links" class="hidden md:flex space-x-4">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'home' %}" class="{% if request.path == '/events/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %}">Home</a>
+                    <a href="{% url 'my_bookings' %}" class="{% if request.path == '/events/my-bookings/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %}">My Bookings</a>
+                    <a href="{% url 'my_events' %}" class="{% if request.path == '/events/my-events/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %}">My Events</a>
+                    <a href="{% url 'profile' %}" class="{% if request.path == '/users/profile/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %}">Profile</a>
+                    <a href="{% url 'logout' %}" class="text-gray-700 hover:text-indigo-500">Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="{% if request.path == '/login/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %}">Login</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div id="mobile-nav-links" class="md:hidden hidden px-6 py-3 space-y-2">
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'home' %}" class="{% if request.path == '/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %} block">Home</a>
+                <a href="{% url 'my_bookings' %}" class="{% if request.path == '/my_bookings/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %} block">My Bookings</a>
+                <a href="{% url 'my_events' %}" class="{% if request.path == '/my_events/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %} block">My Events</a>
+                <a href="{% url 'profile' %}" class="{% if request.path == '/profile/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %} block">Profile</a>
+                <a href="{% url 'logout' %}" class="text-gray-700 hover:text-indigo-500 block">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="{% if request.path == '/login/' %}text-indigo-500 font-semibold{% else %}text-gray-700 hover:text-indigo-500{% endif %} block">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileNavLinks = document.getElementById('mobile-nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            mobileNavLinks.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventify - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-indigo-600 to-blue-500 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md p-8 space-y-4 bg-white shadow-lg rounded-lg">
+        <h2 class="text-3xl font-semibold text-center text-gray-700">Eventify</h2>
+        <p class="text-center text-gray-600">Login to your account</p>
+        <form method="POST" class="space-y-4">
+            {% csrf_token %}
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-600">Username</label>
+                <input type="text" name="username" class="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
+                <input type="password" name="password" class="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <button type="submit" class="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition duration-200">
+                Login
+            </button>
+            {% if messages %}
+                <div class="space-y-2">
+                    {% for message in messages %}
+                        <p class="text-sm text-center p-2 rounded-lg {% if message.tags == 'success' %}bg-green-100 text-green-700{% elif message.tags == 'error' %}bg-red-100 text-red-700{% endif %}">
+                            {{ message }}
+                        </p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </form>
+        <p class="text-center text-sm text-gray-600">
+            Don't have an account? <a href="{% url 'register' %}" class="text-indigo-500 hover:underline">Sign up</a>
+        </p>
+    </div>
+</body>
+</html>

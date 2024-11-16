@@ -2,8 +2,11 @@ from django.shortcuts import render, redirect
 from .forms import PostForm
 from .models import Post
 from . import forms
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
+@login_required
 def add_posts(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -15,6 +18,7 @@ def add_posts(request):
 
     return render(request, 'add_posts.html', {"form": form})
 
+@login_required
 def edit_post(request, pk):
     post = Post.objects.get(pk=pk)
     form = forms.PostForm(instance=post)
@@ -26,6 +30,7 @@ def edit_post(request, pk):
             return redirect('/')
     return render(request, 'edit_post.html', {"form": form})
 
+@login_required
 def delete_post(request, pk):
     post = Post.objects.get(pk=pk)
     post.delete()

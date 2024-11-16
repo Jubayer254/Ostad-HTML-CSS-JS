@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto p-4">
+    <div class="flex justify-between items-center mb-4">
+        <h1 class="text-3xl font-semibold">My Booking</h1>
+        <a href="{% url 'home' %}" class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Book a Event Now</a>
+    </div>
+
+    {% if messages %}
+        <div style="margin: 10px 0 10px 0;">
+            {% for message in messages %}
+                <p class="text-sm text-center p-2 rounded-lg {% if message.tags == 'success' %}bg-green-100 text-green-700{% elif message.tags == 'error' %}bg-red-100 text-red-700{% endif %}">
+                    {{ message }}
+                </p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if user_booked_events %}
+        <div class="space-y-4 mt-4">
+            {% for booking in user_booked_events %}
+                <div class="p-4 border rounded-lg">
+                    <h2 class="text-xl font-semibold">{{ booking.event.name }}</h2>
+                    <p><strong>Date:</strong> {{ booking.event.date }}</p>
+                    <p><strong>Location:</strong> {{ booking.event.location }}</p>
+                    <p><strong>Description:</strong> {{ booking.event.description }}</p>
+                    <p><strong>Capacity:</strong> {{ booking.event.attendees_count }}/{{ booking.event.capacity }}</p>
+                    <p><strong>Category:</strong> {{ booking.event.category }}</p>
+                    
+
+                    <form method="POST" action="{% url 'delete_booking' booking.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="text-red-500 underline">Cancel Booking</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>You have not booked any events yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

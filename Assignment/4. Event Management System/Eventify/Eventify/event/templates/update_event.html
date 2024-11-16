@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto p-4">
+    <h1 class="text-3xl font-semibold">Update Event: {{ event.name }}</h1>
+    <form method="POST" class="space-y-4">
+        {% csrf_token %}
+        
+        <div>
+            <label for="name">Event Name</label>
+            <input type="text" name="name" id="name" value="{{ event.name }}" required class="border rounded w-full p-2" />
+        </div>
+
+        <div>
+            <label for="date">Date</label>
+            <input type="datetime-local" name="date" id="date" value="{{ event.date|date:'Y-m-d\\TH:i' }}" required class="border rounded w-full p-2" />
+        </div>
+
+        <div>
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location" value="{{ event.location }}" required class="border rounded w-full p-2" />
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <textarea name="description" id="description" class="border rounded w-full p-2">{{ event.description }}</textarea>
+        </div>
+
+        <div>
+            <label for="capacity">Capacity</label>
+            <input type="number" name="capacity" id="capacity" value="{{ event.capacity }}" min="0" class="border rounded w-full p-2" />
+        </div>
+
+        <div>
+            <label for="category">Category</label>
+            <select name="category" id="category" class="border rounded w-full p-2">
+                <option value="">Select Category</option>
+                {% for category in categories %}
+                    <option value="{{ category.id }}" {% if event.category and event.category.id == category.id %}selected{% endif %}>{{ category.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Update Event</button>
+
+        {% if messages %}
+            <div class="space-y-2">
+                {% for message in messages %}
+                    <p class="text-sm text-center p-2 rounded-lg {% if message.tags == 'success' %}bg-green-100 text-green-700{% elif message.tags == 'error' %}bg-red-100 text-red-700{% endif %}">
+                        {{ message }}
+                    </p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}
